@@ -84,7 +84,7 @@ $setup_complete = $this->pconfig->get('confirm_step', 0) ? 3 : 2;
 				{
 					$owned_by .= '<strong>' . \Hubzero\Utility\Str::truncate($row->groupname, 20) . '</strong>';
 				}
-				else if ($row->created_by_user == User::get('id'))
+				elseif ($row->created_by_user == User::get('id'))
 				{
 					$owned_by .= Lang::txt('MOD_MYPROJECTSMINI_ME');
 				}
@@ -100,11 +100,11 @@ $setup_complete = $this->pconfig->get('confirm_step', 0) ? 3 : 2;
 				{
 					$class = "pr-active";
 				}
-				else if ($row->setup_stage < $setup_complete)
+				elseif ($row->setup_stage < $setup_complete)
 				{
 					$class = "pr-setup";
 				}
-				else if ($row->state == 0)
+				elseif ($row->state == 0)
 				{
 					$class = "pr-inactive";
 				}
@@ -121,7 +121,7 @@ $setup_complete = $this->pconfig->get('confirm_step', 0) ? 3 : 2;
 							{
 								echo ' | ' . $setup;
 							}
-							else if ($row->state == 0)
+							elseif ($row->state == 0)
 							{
 								echo ' | ' . Lang::txt('MOD_MYPROJECTSMINI_STATUS_SUSPENDED');
 							}
